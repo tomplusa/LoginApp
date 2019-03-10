@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="main-content">
+  <div class="panel">
+    <fieldset>
+      <form  autocomplete="off" action="#" th:action="@{/registration}"
+             th:object="${user}" method="post" class="form-style" role="form">
+        <legend>Registration</legend>
+
+        <label><span>Name </span><input type="text" th:field="*{name}" placeholder="Name" class="input-field" required/></label>
+        <label><span>Last name </span><input type="text" th:field="*{lastName}" placeholder="Last name" class="input-field" required/></label>
+        <label><span>Email </span><input type="email" th:field="*{email}" class="input-field" name="email" th:placeholder="Email" required/></label>
+        <label><span>Password </span><input type="password" th:field="*{password}" class="input-field" name="password" placeholder="Password" required/></label>
+        <label><span>Admin</span><input type="radio" th:field="*{role}" name="radio" th:value ="1" required checked></label>
+        <label><span>User</span><input type="radio" th:field="*{role}" name="radio" th:value ="2"></label>
+
+        <label><input type="submit" value="Register"/></label>
+      </form>
+      <form th:action="@{/}" method="get">
+        <button type="Submit" class="submit-button">Go to login page</button>
+      </form>
+    </fieldset>
+  </div>
+
+</div>
+
+</body>
+</html>

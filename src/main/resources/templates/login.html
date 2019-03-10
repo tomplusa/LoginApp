@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8"/>
+<head>
+    <title>Login appliaction</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+
+<body>
+<div class="main-content">
+    <div class="panel">
+        <fieldset>
+            <form th:action="@{/login}" method="post" class="form-style">
+                    <legend>Login</legend>
+                    <label><span>Email </span><input type="email" class="input-field" name="email" th:placeholder="Email" required/></label>
+                    <label><span>Password </span><input type="password" class="input-field" name="password" placeholder="Password" required/></label>
+                    <label><input type="submit" value="Log in"/></label>
+            </form>
+            <form th:action="@{/registration}" method="get">
+                <button type="Submit" class="submit-button">Go to registration page</button>
+            </form>
+        </fieldset>
+
+        <div align="center" th:if="${param.error}" class="error-msg">
+            <p>Email or Password invalid, please verify</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

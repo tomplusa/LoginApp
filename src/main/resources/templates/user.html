@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User page</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="main-content">
+  <div class="panel">
+    <fieldset >
+      <div class="form-style">
+        <legend th:utext="${userData}"></legend>
+      </div>
+      <br><br>
+      <div class="form-style">
+          <img th:src="@{/image.jpg}" width="640" height="400" alt="Bike"/>
+      </div>
+
+      <form th:action="@{/logout}" method="get">
+        <button type="Submit" class="submit-button">Logout</button>
+      </form>
+    </fieldset>
+  </div>
+</div>
+</body>
+</html>
